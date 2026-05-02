@@ -3,6 +3,8 @@ import css from "./CreateNote.module.css";
 import NoteForm from "@/components/NoteForm/NoteForm";
 import { Tag } from "@/types/note";
 
+export const dynamic = "force-dynamic";
+
 const CreateNote = async () => {
   let categories: Tag[] = [];
 
@@ -23,7 +25,6 @@ const CreateNote = async () => {
     <main className={css.main}>
       <div className={css.container}>
         <h1 className={css.title}>Create note</h1>
-
         <NoteForm categories={categories} />
       </div>
     </main>

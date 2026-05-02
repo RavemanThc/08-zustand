@@ -4,30 +4,20 @@
 
 __turbopack_context__.s([
     "default",
-    ()=>Error,
-    "generateMetadata",
-    ()=>generateMetadata
+    ()=>Error
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/compiler-runtime.js [app-client] (ecmascript)");
 "use client";
 ;
 ;
-async function generateMetadata({ params }) {
-    const { id } = await params;
-    const note = await fetchNoteById(id);
-    return {
-        title: `Note: ${note.title}`,
-        description: note.content.slice(0, 30)
-    };
-}
 function Error(t0) {
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(3);
-    if ($[0] !== "d14c5c550d42596c0a2b8788a99edf1729f3e3be51cac8cc6463da83e6813049") {
+    if ($[0] !== "db6a4f980d801079d7c1819168fd57b304662af2662803c1280011bbae7707e7") {
         for(let $i = 0; $i < 3; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "d14c5c550d42596c0a2b8788a99edf1729f3e3be51cac8cc6463da83e6813049";
+        $[0] = "db6a4f980d801079d7c1819168fd57b304662af2662803c1280011bbae7707e7";
     }
     const { error } = t0;
     let t1;
@@ -39,7 +29,7 @@ function Error(t0) {
             ]
         }, void 0, true, {
             fileName: "[project]/app/notes/error.tsx",
-            lineNumber: 29,
+            lineNumber: 17,
             columnNumber: 10
         }, this);
         $[1] = error.message;

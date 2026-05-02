@@ -584,6 +584,127 @@ self.__BUILD_MANIFEST = {
         ],
         "source": "/notes/:nxtPid",
         "destination": "/(.)notes/:nxtPid"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/.*"
+          }
+        ],
+        "source": "/notes/:nxtPid",
+        "destination": "/(.)notes/:nxtPid"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/.*"
+          }
+        ],
+        "source": "/notes/:nxtPid",
+        "destination": "/(.)notes/:nxtPid"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/.*"
+          }
+        ],
+        "source": "/notes/:nxtPid",
+        "destination": "/(.)notes/:nxtPid"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/.*"
+          }
+        ],
+        "source": "/notes/:nxtPid",
+        "destination": "/(.)notes/:nxtPid"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/.*"
+          }
+        ],
+        "source": "/notes/:nxtPid",
+        "destination": "/(.)notes/:nxtPid"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/.*"
+          }
+        ],
+        "source": "/notes/:nxtPid",
+        "destination": "/(.)notes/:nxtPid"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/.*"
+          }
+        ],
+        "source": "/notes/:nxtPid",
+        "destination": "/(.)notes/:nxtPid"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/.*"
+          }
+        ],
+        "source": "/notes/:nxtPid",
+        "destination": "/(.)notes/:nxtPid"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/.*"
+          }
+        ],
+        "source": "/notes/:nxtPid",
+        "destination": "/(.)notes/:nxtPid"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/.*"
+          }
+        ],
+        "source": "/notes/:nxtPid",
+        "destination": "/(.)notes/:nxtPid"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/.*"
+          }
+        ],
+        "source": "/notes/:nxtPid",
+        "destination": "/(.)notes/:nxtPid"
       }
     ],
     "fallback": []

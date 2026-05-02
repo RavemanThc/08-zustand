@@ -537,3 +537,11 @@
 {"timestamp":"01:07:47.439","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./lib/api.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
 {"timestamp":"01:07:47.968","source":"Server","level":"ERROR","message":"⨯ AxiosError: Request failed with status code 429"}
 {"timestamp":"01:07:48.009","source":"Server","level":"ERROR","message":"⨯ AxiosError: Request failed with status code 429"}
+{"timestamp":"01:22:09.676","source":"Server","level":"ERROR","message":"⨯ AxiosError: Request failed with status code 404"}
+{"timestamp":"01:24:00.338","source":"Server","level":"ERROR","message":"⨯ AxiosError: Request failed with status code 404"}
+{"timestamp":"01:27:56.358","source":"Browser","level":"ERROR","message":"uncaughtError: Error: Switched to client rendering because the server rendering errored:\n\nRequest failed with status code 429"}
+{"timestamp":"01:27:56.358","source":"Browser","level":"ERROR","message":"uncaughtError: Error: Switched to client rendering because the server rendering errored:\n\nRequest failed with status code 429"}
+{"timestamp":"01:27:57.294","source":"Browser","level":"ERROR","message":"uncaughtError: Error: Switched to client rendering because the server rendering errored:\n\nRequest failed with status code 404"}
+{"timestamp":"01:27:57.294","source":"Browser","level":"ERROR","message":"uncaughtError: Error: Switched to client rendering because the server rendering errored:\n\nRequest failed with status code 404"}
+{"timestamp":"01:29:16.652","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./app/notes/error.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"01:29:16.787","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./app/notes/error.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}

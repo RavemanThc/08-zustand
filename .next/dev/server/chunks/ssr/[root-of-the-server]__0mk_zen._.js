@@ -186,26 +186,34 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$api$2e$ts__$5b$app$2d
 ;
 ;
 async function generateMetadata({ params }) {
-    const { id } = await params;
-    const note = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$api$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["fetchNoteById"])(id);
-    return {
-        title: `Note: ${note.title}`,
-        description: note.content.slice(0, 30),
-        openGraph: {
+    const { id } = params;
+    try {
+        const note = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$api$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["fetchNoteById"])(id);
+        return {
             title: `Note: ${note.title}`,
-            description: note.content.slice(0, 100),
-            url: `https://notehub.com/notes/${id}`,
-            images: [
-                {
-                    url: "https://ac.goit.global/fullstack/react/og-meta.jpg",
-                    width: 1200,
-                    height: 630,
-                    alt: note.title
-                }
-            ],
-            type: "article"
-        }
-    };
+            description: note.content.slice(0, 30),
+            openGraph: {
+                title: `Note: ${note.title}`,
+                description: note.content.slice(0, 100),
+                url: `https://notehub.com/notes/${id}`,
+                images: [
+                    {
+                        url: "https://ac.goit.global/fullstack/react/og-meta.jpg",
+                        width: 1200,
+                        height: 630,
+                        alt: note.title
+                    }
+                ],
+                type: "article"
+            }
+        };
+    } catch (error) {
+        // 👇 ВАЖНО: не даём билду упасть
+        return {
+            title: "Note not found",
+            description: "This note does not exist"
+        };
+    }
 }
 async function NotesPage({ params }) {
     const { slug } = await params;
@@ -225,12 +233,12 @@ async function NotesPage({ params }) {
             tag: tag
         }, void 0, false, {
             fileName: "[project]/app/notes/filter/[...slug]/page.tsx",
-            lineNumber: 56,
+            lineNumber: 66,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/notes/filter/[...slug]/page.tsx",
-        lineNumber: 55,
+        lineNumber: 65,
         columnNumber: 5
     }, this);
 }
