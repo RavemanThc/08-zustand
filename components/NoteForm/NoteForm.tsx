@@ -7,6 +7,7 @@ import { Tag } from "@/types/note";
 
 import css from "./NoteForm.module.css";
 import { useNoteDraftStore } from "@/lib/stores/noteStores";
+import { useRouter } from "next/router";
 
 interface NoteFormProps {
   onClose: () => void;
@@ -14,8 +15,13 @@ interface NoteFormProps {
 }
 
 export default function NoteForm({ categories, onClose }: NoteFormProps) {
+  const router = useRouter();
+
   const queryClient = useQueryClient();
   const { draft, setDraft, clearDraft } = useNoteDraftStore();
+  const handleClose = () => {
+    router.back(); // або router.push("/notes")
+  };
   const handleChange = (
     event: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -107,6 +113,9 @@ export default function NoteForm({ categories, onClose }: NoteFormProps) {
           disabled={mutation.isPending}
         >
           Create note
+        </button>
+        <button type="button" onClick={handleClose}>
+          Cancel
         </button>
       </div>
     </form>

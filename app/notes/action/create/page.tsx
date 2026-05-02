@@ -24,7 +24,7 @@ const CreateNote = async () => {
       <div className={css.container}>
         <h1 className={css.title}>Create note</h1>
 
-        <NoteForm categories={categories} onClose={() => {}} />
+        <NoteForm categories={categories} />
       </div>
     </main>
   );
