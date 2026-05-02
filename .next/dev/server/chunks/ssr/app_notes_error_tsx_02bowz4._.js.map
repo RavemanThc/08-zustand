@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///home/iaiaiaiep/Documents/goit/08-zustand/app/notes/error.tsx"],"sourcesContent":["\"use client\";\nexport async function generateMetadata({ params }: Props): Promise<Metadata> {\n  const { id } = await params;\n  const note = await fetchNoteById(id);\n  return {\n    title: `Note: ${note.title}`,\n    description: note.content.slice(0, 30),\n  };\n}\nexport default function Error({ error }: { error: Error }) {\n  return <p>Could not fetch the list of notes. {error.message}</p>;\n}\n"],"names":["generateMetadata","params","id","note","fetchNoteById","title","description","content","slice","Error","error","message"],"mappings":";;;;;;;AAAA;;AACO,eAAeA,iBAAiB,EAAEC,MAAM,EAAS;IACtD,MAAM,EAAEC,EAAE,EAAE,GAAG,MAAMD;IACrB,MAAME,OAAO,MAAMC,cAAcF;IACjC,OAAO;QACLG,OAAO,CAAC,MAAM,EAAEF,KAAKE,KAAK,EAAE;QAC5BC,aAAaH,KAAKI,OAAO,CAACC,KAAK,CAAC,GAAG;IACrC;AACF;AACe,SAASC,MAAM,EAAEC,KAAK,EAAoB;IACvD,qBAAO,8OAAC;;YAAE;YAAoCA,MAAMC,OAAO;;;;;;;AAC7D"}}]
+}
