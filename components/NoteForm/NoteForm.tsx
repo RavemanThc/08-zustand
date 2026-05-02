@@ -10,7 +10,7 @@ import { useNoteDraftStore } from "@/lib/stores/noteStores";
 import { useRouter } from "next/router";
 
 interface NoteFormProps {
-  onClose: () => void;
+  onClose?: () => void;
   categories: Tag[];
 }
 
@@ -37,7 +37,7 @@ export default function NoteForm({ categories, onClose }: NoteFormProps) {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["notes"] });
       clearDraft();
-      onClose();
+      onClose?.();
     },
   });
 
