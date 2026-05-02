@@ -56,6 +56,6 @@ export const deleteNote = async (id: string): Promise<Note> => {
   return data;
 };
 export const getTags = async (): Promise<Tag[]> => {
-  const { data } = await instance.get<Tag[]>("/categories");
+  const { data } = await instance.get<Tag[]>("/tags");
   return data;
 };

@@ -133,7 +133,7 @@ const deleteNote = async (id)=>{
     return data;
 };
 const getTags = async ()=>{
-    const { data } = await instance.get("/categories");
+    const { data } = await instance.get("/tags");
     return data;
 };
 }),
