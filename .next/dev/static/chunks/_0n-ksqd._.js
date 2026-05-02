@@ -50,8 +50,12 @@ const deleteNote = async (id)=>{
     return data;
 };
 const getTags = async ()=>{
-    const { data } = await instance.get("/tags");
-    return data;
+    const { data } = await instance.get("/notes");
+    const uniqueTags = Array.from(new Set(data.notes.map((note)=>note.tag)));
+    return uniqueTags.map((tag)=>({
+            id: tag,
+            name: tag
+        }));
 };
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);

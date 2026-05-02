@@ -133,8 +133,12 @@ const deleteNote = async (id)=>{
     return data;
 };
 const getTags = async ()=>{
-    const { data } = await instance.get("/tags");
-    return data;
+    const { data } = await instance.get("/notes");
+    const uniqueTags = Array.from(new Set(data.notes.map((note)=>note.tag)));
+    return uniqueTags.map((tag)=>({
+            id: tag,
+            name: tag
+        }));
 };
 }),
 "[project]/app/notes/filter/[...slug]/error.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {

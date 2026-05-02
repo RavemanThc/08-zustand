@@ -56,6 +56,12 @@ export const deleteNote = async (id: string): Promise<Note> => {
   return data;
 };
 export const getTags = async (): Promise<Tag[]> => {
-  const { data } = await instance.get<Tag[]>("/tags");
-  return data;
+  const { data } = await instance.get<FetchNotesResponse>("/notes");
+
+  const uniqueTags = Array.from(new Set(data.notes.map((note) => note.tag)));
+
+  return uniqueTags.map((tag) => ({
+    id: tag,
+    name: tag,
+  }));
 };
