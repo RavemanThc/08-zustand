@@ -1,13 +1,12 @@
 "use client";
 
-import { useActionState } from "react";
 import { useQueryClient, useMutation } from "@tanstack/react-query";
 import { createNote, CreateNotePayload } from "@/lib/api";
 import { Tag } from "@/types/note";
 
 import css from "./NoteForm.module.css";
 import { useNoteDraftStore } from "@/lib/stores/noteStores";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 interface NoteFormProps {
   onClose?: () => void;
@@ -103,7 +102,11 @@ export default function NoteForm({ categories, onClose }: NoteFormProps) {
 
       {/* ACTIONS */}
       <div className={css.actions}>
-        <button type="button" className={css.cancelButton} onClick={onClose}>
+        <button
+          type="button"
+          className={css.cancelButton}
+          onClick={onClose ?? handleClose}
+        >
           Cancel
         </button>
 
@@ -113,9 +116,6 @@ export default function NoteForm({ categories, onClose }: NoteFormProps) {
           disabled={mutation.isPending}
         >
           Create note
-        </button>
-        <button type="button" onClick={handleClose}>
-          Cancel
         </button>
       </div>
     </form>
