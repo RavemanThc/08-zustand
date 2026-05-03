@@ -5,7 +5,7 @@ import { createNote, CreateNotePayload } from "@/lib/api";
 import { Tag } from "@/types/note";
 
 import css from "./NoteForm.module.css";
-import { useNoteDraftStore } from "@/lib/store/noteStores";
+import { useNoteDraftStore } from "@/lib/store/noteStore";
 import { useRouter } from "next/navigation";
 
 interface NoteFormProps {
