@@ -2,5 +2,5 @@
   "version": 3,
   "sources": [],
   "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///home/iaiaiaiep/Documents/goit/08-zustand/app/notes/error.tsx"],"sourcesContent":["\"use client\";\n\nexport default function Error({ error }: { error: Error }) {\n  return <p>Could not fetch the list of notes. {error.message}</p>;\n}\n"],"names":["Error","error","message"],"mappings":";;;;;AAAA;;AAEe,SAASA,MAAM,EAAEC,KAAK,EAAoB;IACvD,qBAAO,8OAAC;;YAAE;YAAoCA,MAAMC,OAAO;;;;;;;AAC7D"}}]
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///home/iaiaiaiep/Documents/goit/08-zustand/app/notes/error.tsx"],"sourcesContent":["\"use client\";\n\nexport default function Error({ error }: { error: Error }) {\n  return <p>Could not fetch the list of notes. {error.message}</p>;\n}"],"names":["Error","error","message"],"mappings":";;;;;AAAA;;AAEe,SAASA,MAAM,EAAEC,KAAK,EAAoB;IACvD,qBAAO,8OAAC;;YAAE;YAAoCA,MAAMC,OAAO;;;;;;;AAC7D"}}]
 }

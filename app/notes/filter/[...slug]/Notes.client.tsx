@@ -3,15 +3,16 @@
 import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useDebouncedCallback } from "use-debounce";
+import Link from "next/link";
 
 import { fetchNotes, deleteNote } from "@/lib/api";
 
+import NoteList from "@/components/NoteList/NoteList";
 import SearchBox from "@/components/SearchBox/SearchBox";
 import Pagination from "@/components/Pagination/Pagination";
 
 import css from "./Notes.module.css";
 import { NotesResponse } from "@/types/note";
-import Link from "next/link";
 
 type Props = {
   tag: string;
@@ -57,14 +58,19 @@ export default function NotesClient({ tag }: Props) {
           <Pagination
             currentPage={page}
             pageCount={data.totalPages}
-            onPageChange={(page) => setPage(page)}
+            onPageChange={setPage}
           />
         )}
 
+        {/* 🔥 ЗАМІНА MODAL BUTTON → LINK */}
         <Link href="/notes/action/create" className={css.button}>
           Create note +
         </Link>
       </header>
+
+      {data.notes.length > 0 && (
+        <NoteList notes={data.notes} onDelete={deleteMutation.mutate} />
+      )}
     </div>
   );
 }

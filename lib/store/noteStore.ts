@@ -1,11 +1,6 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 import { CreateNotePayload } from "../api";
-
-type NoteDraftStore = {
-  draft: CreateNotePayload;
-  setDraft: (note: CreateNotePayload) => void;
-  clearDraft: () => void;
-};
 
 const initialDraft: CreateNotePayload = {
   title: "",
@@ -13,8 +8,26 @@ const initialDraft: CreateNotePayload = {
   tag: "Todo",
 };
 
-export const useNoteDraftStore = create<NoteDraftStore>()((set) => ({
-  draft: initialDraft,
-  setDraft: (note) => set(() => ({ draft: note })),
-  clearDraft: () => set(() => ({ draft: initialDraft })),
-}));
+type NoteDraftStore = {
+  draft: CreateNotePayload;
+  setDraft: (note: Partial<CreateNotePayload>) => void;
+  clearDraft: () => void;
+};
+
+export const useNoteDraftStore = create<NoteDraftStore>()(
+  persist(
+    (set) => ({
+      draft: initialDraft,
+
+      setDraft: (partial) =>
+        set((state) => ({
+          draft: { ...state.draft, ...partial },
+        })),
+
+      clearDraft: () => set({ draft: initialDraft }),
+    }),
+    {
+      name: "note-draft", // key in localStorage
+    },
+  ),
+);
