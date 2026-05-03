@@ -12,8 +12,27 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const filter = params.slug?.join(", ") ?? "all";
+
   return {
-    title: `Filter: ${params.slug?.join(", ") ?? "all"}`,
+    title: `Notes filter: ${filter}`,
+    description: `Filtered notes by: ${filter}`,
+
+    openGraph: {
+      title: `Notes filter: ${filter}`,
+      description: `Filtered notes by: ${filter}`,
+      url: `https://notehub.com/notes/filter/${params.slug?.join("/") ?? "all"}`,
+      siteName: "NoteHub",
+      images: [
+        {
+          url: "https://ac.goit.global/fullstack/react/og-meta.jpg",
+          width: 1200,
+          height: 630,
+          alt: `Filter ${filter}`,
+        },
+      ],
+      type: "website",
+    },
   };
 }
 

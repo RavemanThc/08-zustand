@@ -13,30 +13,23 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "NoteHub",
-  description: "Notes app",
-  keywords: [
-    "notes",
-    "notepad",
-    "online notes",
-    "note-taking app",
-    "digital notebook",
-    "productivity tool",
-    "cloud sync",
-    "checklist",
-    "markdown",
-    "task manager",
-    "organization",
-    "personal wiki",
-    "private notes",
-    "заметки",
-    "блокнот онлайн",
-    "онлайн блокнот",
-    "список дел",
-    "планировщик",
-    "веб-заметки",
-  ],
-  authors: [{ name: "Harkusha Vladislav" }],
+  title: "NoteHub - Smart Notes App",
+  description:
+    "A modern notes application for organizing your thoughts and tasks.",
+
+  openGraph: {
+    title: "NoteHub - Smart Notes App",
+    description:
+      "A modern notes application for organizing your thoughts and tasks.",
+    images: [
+      {
+        url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
+        width: 1200,
+        height: 630,
+        alt: "NoteHub preview",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

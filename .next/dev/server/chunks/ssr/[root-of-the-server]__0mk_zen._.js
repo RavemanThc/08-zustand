@@ -157,12 +157,8 @@ const deleteNote = async (id)=>{
     return data;
 };
 const getTags = async ()=>{
-    const { data } = await instance.get("/notes");
-    const uniqueTags = Array.from(new Set(data.notes.map((note)=>note.tag)));
-    return uniqueTags.map((tag)=>({
-            id: tag,
-            name: tag
-        }));
+    const { data } = await instance.get("/categories");
+    return data;
 };
 }),
 "[project]/app/notes/filter/[...slug]/page.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
@@ -184,42 +180,32 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$api$2e$ts__$5b$app$2d
 ;
 ;
 ;
-;
 async function generateMetadata({ params }) {
-    const { id } = params;
-    try {
-        const note = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$api$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["fetchNoteById"])(id);
-        return {
-            title: `Note: ${note.title}`,
-            description: note.content.slice(0, 30),
-            openGraph: {
-                title: `Note: ${note.title}`,
-                description: note.content.slice(0, 100),
-                url: `https://notehub.com/notes/${id}`,
-                images: [
-                    {
-                        url: "https://ac.goit.global/fullstack/react/og-meta.jpg",
-                        width: 1200,
-                        height: 630,
-                        alt: note.title
-                    }
-                ],
-                type: "article"
-            }
-        };
-    } catch (error) {
-        // 👇 ВАЖНО: не даём билду упасть
-        return {
-            title: "Note not found",
-            description: "This note does not exist"
-        };
-    }
+    const filter = params.slug?.join(", ") ?? "all";
+    return {
+        title: `Notes filter: ${filter}`,
+        description: `Filtered notes by: ${filter}`,
+        openGraph: {
+            title: `Notes filter: ${filter}`,
+            description: `Filtered notes by: ${filter}`,
+            url: `https://notehub.com/notes/filter/${params.slug?.join("/") ?? "all"}`,
+            siteName: "NoteHub",
+            images: [
+                {
+                    url: "https://ac.goit.global/fullstack/react/og-meta.jpg",
+                    width: 1200,
+                    height: 630,
+                    alt: `Filter ${filter}`
+                }
+            ],
+            type: "website"
+        }
+    };
 }
 async function NotesPage({ params }) {
-    const { slug } = await params;
+    const { slug } = params;
     const queryClient = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tanstack$2f$query$2d$core$2f$build$2f$modern$2f$queryClient$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["QueryClient"]();
     const tag = slug?.[0] ?? "all";
-    const search = tag === "all" ? "" : tag;
     await queryClient.prefetchQuery({
         queryKey: [
             "notes",
@@ -233,12 +219,12 @@ async function NotesPage({ params }) {
             tag: tag
         }, void 0, false, {
             fileName: "[project]/app/notes/filter/[...slug]/page.tsx",
-            lineNumber: 66,
+            lineNumber: 53,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/notes/filter/[...slug]/page.tsx",
-        lineNumber: 65,
+        lineNumber: 52,
         columnNumber: 5
     }, this);
 }

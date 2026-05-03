@@ -55,8 +55,25 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$api$2e$ts__$5b$app$2d
 ;
 ;
 async function generateMetadata({ params }) {
+    const filter = params.slug?.join(", ") ?? "all";
     return {
-        title: `Filter: ${params.slug?.join(", ") ?? "all"}`
+        title: `Notes filter: ${filter}`,
+        description: `Filtered notes by: ${filter}`,
+        openGraph: {
+            title: `Notes filter: ${filter}`,
+            description: `Filtered notes by: ${filter}`,
+            url: `https://notehub.com/notes/filter/${params.slug?.join("/") ?? "all"}`,
+            siteName: "NoteHub",
+            images: [
+                {
+                    url: "https://ac.goit.global/fullstack/react/og-meta.jpg",
+                    width: 1200,
+                    height: 630,
+                    alt: `Filter ${filter}`
+                }
+            ],
+            type: "website"
+        }
     };
 }
 async function NotesPage({ params }) {
@@ -76,12 +93,12 @@ async function NotesPage({ params }) {
             tag: tag
         }, void 0, false, {
             fileName: "[project]/app/notes/filter/[...slug]/page.tsx",
-            lineNumber: 34,
+            lineNumber: 53,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/notes/filter/[...slug]/page.tsx",
-        lineNumber: 33,
+        lineNumber: 52,
         columnNumber: 5
     }, this);
 }
