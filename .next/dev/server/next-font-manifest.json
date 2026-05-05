@@ -1,11 +1,5 @@
 {
   "app": {
-    "[project]/app/@modal/(.)notes/[id]/page": [
-      "static/media/ce62453a442c7f35-s.p.0333ktddfbsxy.woff2"
-    ],
-    "[project]/app/notes/action/create/page": [
-      "static/media/ce62453a442c7f35-s.p.0333ktddfbsxy.woff2"
-    ],
     "[project]/app/notes/filter/[...slug]/page": [
       "static/media/ce62453a442c7f35-s.p.0333ktddfbsxy.woff2"
     ],
