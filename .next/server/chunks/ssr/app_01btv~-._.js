@@ -1,3 +1,0 @@
-module.exports=[40076,a=>{a.v({container:"Home-module__baJ6tW__container",description:"Home-module__baJ6tW__description",main:"Home-module__baJ6tW__main",title:"Home-module__baJ6tW__title"})},50708,a=>{"use strict";var b=a.i(7997),c=a.i(40076);a.s(["default",0,function(){return(0,b.jsx)("main",{children:(0,b.jsxs)("div",{className:c.default.container,children:[(0,b.jsx)("h1",{className:c.default.title,children:"Welcome to NoteHub"}),(0,b.jsx)("p",{className:c.default.description,children:"NoteHub is a simple and efficient application designed for managing notes."})]})})}])},26030,a=>{a.n(a.i(50708))}];
-
-//# sourceMappingURL=app_01btv~-._.js.map

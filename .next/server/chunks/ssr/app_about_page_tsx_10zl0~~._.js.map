@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../../app/about/page.tsx"],"sourcesContent":["const About = () => {\n  return <div> About</div>;\n};\n\nexport default About"],"names":["About"],"mappings":"wEAAc,IACL,CAAA,EAAA,EAAA,GAAA,EAAC,MAAA,UAAI"}

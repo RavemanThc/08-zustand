@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///home/iaiaiaiep/Documents/goit/08-zustand/components/TanStackProvider/TanStackProvider.tsx"],"sourcesContent":["\"use client\";\n\nimport { QueryClient, QueryClientProvider } from \"@tanstack/react-query\";\nimport { useState } from \"react\";\n\nexport default function TanStackProvider({ children }: { children: React.ReactNode }) {\n  const [client] = useState(() => new QueryClient());\n\n  return <QueryClientProvider client={client}>{children}</QueryClientProvider>;\n}"],"names":["TanStackProvider","children","client"],"mappings":";;;;;AAEA;AAAA;AACA;AAHA;;;;AAKe,SAASA,iBAAiB,EAAEC,QAAQ,EAAiC;IAClF,MAAM,CAACC,OAAO,GAAG,IAAA,iNAAQ,EAAC,IAAM,IAAI,4LAAW;IAE/C,qBAAO,8OAAC,6MAAmB;QAACA,QAAQA;kBAASD;;;;;;AAC/C"}}]
-}

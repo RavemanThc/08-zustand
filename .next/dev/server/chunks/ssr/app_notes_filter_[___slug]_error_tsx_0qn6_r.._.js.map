@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///home/iaiaiaiep/Documents/goit/08-zustand/app/notes/filter/%5B...slug%5D/error.tsx"],"sourcesContent":["\"use client\";\ntype Props = {\n  error: Error;\n  reset: () => void;\n};\n\nconst Error = ({ error, reset }: Props) => {\n  return (\n    <div>\n      <h2>Помилка при завантаженні</h2>\n      <p>{error.message}</p>\n      <button onClick={reset}>Спробувати знову</button>\n    </div>\n  );\n};\n\nexport default Error;\n"],"names":["Error","error","reset","message","onClick"],"mappings":";;;;;AAAA;;AAMA,MAAMA,QAAQ,CAAC,EAAEC,KAAK,EAAEC,KAAK,EAAS;IACpC,qBACE,8OAAC;;0BACC,8OAAC;0BAAG;;;;;;0BACJ,8OAAC;0BAAGD,MAAME,OAAO;;;;;;0BACjB,8OAAC;gBAAOC,SAASF;0BAAO;;;;;;;;;;;;AAG9B;uCAEeF"}}]
-}

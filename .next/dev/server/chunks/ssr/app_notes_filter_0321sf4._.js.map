@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/app/notes/filter/Layout.module.css [app-rsc] (css module)"],"sourcesContent":["__turbopack_context__.v({\n  \"container\": \"Layout-module__uJHfDq__container\",\n  \"notesWrapper\": \"Layout-module__uJHfDq__notesWrapper\",\n  \"sidebar\": \"Layout-module__uJHfDq__sidebar\",\n});\n"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA"}},
-    {"offset": {"line": 12, "column": 0}, "map": {"version":3,"sources":["file:///home/iaiaiaiep/Documents/goit/08-zustand/app/notes/filter/layout.tsx"],"sourcesContent":["import css from \"./Layout.module.css\";\n\ntype Props = {\n  children: React.ReactNode;\n  sidebar: React.ReactNode;\n};\n\nexport default function NotesLayout({ children, sidebar }: Props) {\n  return (\n    <section className={css.container}>\n      <aside className={css.sidebar}>{sidebar}</aside>\n\n      <main className={css.notesWrapper}>{children}</main>\n    </section>\n  );\n}\n"],"names":["NotesLayout","children","sidebar","className","container","notesWrapper"],"mappings":";;;;;AAAA;;;AAOe,SAASA,YAAY,EAAEC,QAAQ,EAAEC,OAAO,EAAS;IAC9D,qBACE,8OAAC;QAAQC,WAAW,uJAAG,CAACC,SAAS;;0BAC/B,8OAAC;gBAAMD,WAAW,uJAAG,CAACD,OAAO;0BAAGA;;;;;;0BAEhC,8OAAC;gBAAKC,WAAW,uJAAG,CAACE,YAAY;0BAAGJ;;;;;;;;;;;;AAG1C"}}]
-}

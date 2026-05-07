@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../../app/profile/page.tsx"],"sourcesContent":["\n\nconst Profile = () =>{\n  return <div>\n      Profile\n    </div>;\n  \n};\n\nexport default Profile"],"names":["Profile"],"mappings":"wEAEgB,IACP,CAAA,EAAA,EAAA,GAAA,EAAC,MAAA,UAAI"}
