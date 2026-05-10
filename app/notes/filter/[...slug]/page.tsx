@@ -8,20 +8,21 @@ import { fetchNotes } from "@/lib/api";
 import { Metadata } from "next";
 
 type Props = {
-  params: { slug: string[] };
+  params: Promise<{ slug: string[] }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const filter = params.slug?.join(", ") ?? "all";
+  const { slug } = await params;
+
+  const filter = slug?.join(", ") ?? "all";
 
   return {
     title: `Notes filter: ${filter}`,
     description: `Filtered notes by: ${filter}`,
-
     openGraph: {
       title: `Notes filter: ${filter}`,
       description: `Filtered notes by: ${filter}`,
-      url: `https://notehub.com/notes/filter/${params.slug?.join("/") ?? "all"}`,
+      url: `https://notehub.com/notes/filter/${slug?.join("/") ?? "all"}`,
       siteName: "NoteHub",
       images: [
         {
@@ -37,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function NotesPage({ params }: Props) {
-  const { slug } = params;
+  const { slug } = await params;
 
   const queryClient = new QueryClient();
 
